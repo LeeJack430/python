@@ -12,6 +12,7 @@ import random
 
 anS=_rdA()
 cou=1
+#cK=["1,","2","3","4","5","6","7","8","9"]
 
 while True:
     aA=0
@@ -21,13 +22,16 @@ while True:
     if Key.upper()=="Q":
         print("程式結束!")
         break
+    
+    # elif Key not in cK:
+    #     print("輸入錯誤！請重新輸入")
+    #     continue
 
     Gu=list(Key)
- 
-    if len(Gu) > 4  :
+    if len(Gu) != 4 :
         print("輸入錯誤！請重新輸入")
         continue
-    
+
     for n in range(4):
         if anS[n] == int(Gu[n]):
             aA += 1
@@ -46,3 +50,4 @@ while True:
             print("程式結束!")
             break
     cou += 1 
+    

@@ -9,25 +9,31 @@ def _rdA():
     return(Ans)
     
 import random 
-
 anS=_rdA()
 cou=1
 
 while True:
     aA=0
     bB=0
-    Key=input("請輸入4個1~9不重複的數字(按Q離開):")
+    Key=input("請輸入4個1~9不重複的數字(按Q/q離開):")
         
     if Key.upper()=="Q":
         print("程式結束!")
         break
-    
+   
     if Key.isnumeric():
         Gu=list(Key)
+        seT=set(Gu)        
         if len(Gu) != 4 :
-            print("輸入錯誤！請重新輸入")
+            print("輸入錯誤!4個數字請重新輸入")
+            continue        
+        if Gu.count("0") != 0:
+            print("輸入錯誤!1~9不能有0！請重新輸入")
             continue
-    
+        if len(seT) !=4 :
+            print("輸入錯誤!數字不能重複!請重新輸入")
+            continue
+        
         for n in range(4):
             if anS[n] == int(Gu[n]):
                 aA += 1
@@ -47,6 +53,5 @@ while True:
                 break
         cou += 1
     else:
-        print("輸入錯誤！請重新輸入")
-        continue
-   
+        print("輸入錯誤！裏頭有英文，請重新輸入")
+        continue   

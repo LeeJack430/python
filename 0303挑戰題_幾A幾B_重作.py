@@ -12,7 +12,6 @@ import random
 
 anS=_rdA()
 cou=1
-#cK=["1,","2","3","4","5","6","7","8","9"]
 
 while True:
     aA=0
@@ -23,31 +22,31 @@ while True:
         print("程式結束!")
         break
     
-    # elif Key not in cK:
-    #     print("輸入錯誤！請重新輸入")
-    #     continue
-
-    Gu=list(Key)
-    if len(Gu) != 4 :
+    if Key.isnumeric():
+        Gu=list(Key)
+        if len(Gu) != 4 :
+            print("輸入錯誤！請重新輸入")
+            continue
+    
+        for n in range(4):
+            if anS[n] == int(Gu[n]):
+                aA += 1
+            elif int(Gu[n]) in anS:
+                bB += 1
+        print("{0}.{1}A.{2}B".format(cou,aA,bB))
+        
+        if aA == 4 :
+            print("猜對了!總共猜了{}次".format(cou))
+            YN = input("要再玩一次嗎?(Y/N)")
+            if YN.upper() == "Y":
+                cou=1
+                anS=_rdA()
+                continue
+            else:
+                print("程式結束!")
+                break
+        cou += 1
+    else:
         print("輸入錯誤！請重新輸入")
         continue
-
-    for n in range(4):
-        if anS[n] == int(Gu[n]):
-            aA += 1
-        elif int(Gu[n]) in anS:
-            bB += 1
-    print("{0}.{1}A.{2}B".format(cou,aA,bB))
-    
-    if aA == 4 :
-        print("猜對了!總共猜了{}次".format(cou))
-        YN = input("要再玩一次嗎?(Y/N)")
-        if YN.upper() == "Y":
-            cou=1
-            anS=_rdA()
-            continue
-        else:
-            print("程式結束!")
-            break
-    cou += 1 
-    
+   

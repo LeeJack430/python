@@ -1,5 +1,5 @@
 number=list()
-while len(number) <= 4 :
+while len(number) <= 5 :
     num=int(input("請輸入數字:"))
     number.append(num)
 print("串列內容:",number)

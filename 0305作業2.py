@@ -7,5 +7,5 @@ while True:
         Ans.append(sS)
     if len(Ans) == 6:
         break
-print("雖機選號為:",Ans)
+print("隨機選號為:",Ans)
 

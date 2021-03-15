@@ -23,7 +23,7 @@ if Key < 300000 and Key > 200000  :
     print('獎金為:',b+pfv[3]+pfv[4])
     print('程式執行完畢')
     
-else:    
+if Key >= 300000:    
     print('年利潤{}'.format(Key))
     c=Key-300000
     b=c*pfv[2]
